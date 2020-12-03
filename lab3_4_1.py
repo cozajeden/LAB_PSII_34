@@ -2,20 +2,24 @@ from numpy import *
 from scipy import fftpack
 from matplotlib import pyplot as plt
 
+# sygnały
 x = arange(20)
 a = sin(x/10*pi)
 b = append(ones(10), zeros(10))
 c = linspace(0,1,10)
 c = append(c, c)
 
+# DFT
 dfta = fftpack.fft(a)
 dftb = fftpack.fft(b)
 dftc = fftpack.fft(c)
 
+# DCT
 dcta = fftpack.dct(a)
 dctb = fftpack.dct(b)
 dctc = fftpack.dct(c)
 
+# moduły transformat
 moddfta = abs(dfta)
 moddftb = abs(dftb)
 moddftc = abs(dftc)
@@ -24,14 +28,17 @@ moddcta = abs(dcta)
 moddctb = abs(dctb)
 moddctc = abs(dctc)
 
+# odwrotna DFT
 idfta = fftpack.ifft(dfta)
 idftb = fftpack.ifft(dftb)
 idftc = fftpack.ifft(dftc)
 
+# odwrotna DCT
 idcta = fftpack.idct(dcta)
 idctb = fftpack.idct(dctb)
 idctc = fftpack.idct(dctc)
 
+# Wyswietlanie wykresów
 plt.figure(0)
 plt.subplot(421)
 plt.stem(x, a)
