@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 # sygnały
 x = arange(20)
 a = sin(x/10*pi)
-b = append(ones(10), zeros(10))
+b = append(ones(10), ones(10) * -1)
 c = linspace(0,1,10)
 c = append(c, c)
 
@@ -61,6 +61,7 @@ plt.title('moduł dct a')
 plt.subplot(428)
 plt.stem(x, idcta)
 plt.title('idct a')
+plt.tight_layout()
 
 plt.figure(1)
 plt.subplot(421)
@@ -84,6 +85,7 @@ plt.title('moduł dct b')
 plt.subplot(428)
 plt.stem(x, idctb)
 plt.title('idct b')
+plt.tight_layout()
 
 plt.figure(2)
 plt.subplot(421)
@@ -107,7 +109,7 @@ plt.title('moduł dct c')
 plt.subplot(428)
 plt.stem(x, idctc)
 plt.title('idct c')
-
-
 plt.tight_layout()
+
+
 plt.show()
