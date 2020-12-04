@@ -1,10 +1,7 @@
 from numpy import *
-from scipy import fftpack
 from matplotlib import pyplot as plt
 from functions import dctmtx, blockproc
 import cv2 as cv
-
-
 
 I = cv.imread('lena.jpg', 0)
 I2 = cv.normalize(I.astype(float64), None, 0., 1., cv.NORM_MINMAX)
