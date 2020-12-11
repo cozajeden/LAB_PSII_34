@@ -9,5 +9,13 @@ if __name__ == "__main__":
     jpg_file = Path("lena.jpg")
     bmp_file = Path("lena.bmp")
     tiff_file = Path("lena.tiff")
-    print(f'jpg: {jpg_file.stat().st_size}, \nbmp: {bmp_file.stat().st_size}, \ntiff: {tiff_file.stat().st_size}')
+    print(f'lena.jpg: {jpg_file.stat().st_size/1024:.02f}kB, \nlena.bmp: {bmp_file.stat().st_size/1024:.02f}kB, \nlena.tiff: {tiff_file.stat().st_size/1024:.02f}kB')
 
+    image_jpg = cv.imread('lena_eq.jpg')
+    cv.imwrite(img=image_jpg, filename='lena_eq.bmp')
+    cv.imwrite(img=image_jpg, filename='lena_eq.tiff')
+
+    jpg_file = Path("lena_eq.jpg")
+    bmp_file = Path("lena_eq.bmp")
+    tiff_file = Path("lena_eq.tiff")
+    print(f'lena_eq.jpg: {jpg_file.stat().st_size/1024:.02f}kB, \nlena_eq.bmp: {bmp_file.stat().st_size/1024:.02f}kB, \nlena_eq.tiff: {tiff_file.stat().st_size/1024:.02f}kB')
