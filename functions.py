@@ -80,7 +80,7 @@ def blockproc(a: ndarray or str or list or tuple, fun=lambda x: x, x=1, y=1, gs=
     for i in range(leny):
         for j in range(lenx):
             if i == 0 and j == 0:
-                continue # Skip the first chunk. It is already calculated.
+                continue # Skip the first chunk. It is already calculated. This will speed up the loop for large chunks.
             else:
                 b[ j*newx:(j + 1)*newx, i*newy:(i+ 1)*newy ] = fun(a[ j*x:(j + 1)*x, i*y:(i+1)*y ])
     return b
